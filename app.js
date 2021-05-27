@@ -1,16 +1,16 @@
+import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
-import { validator } from "./src/utility/validator";
+import connection from "./src/Database/connection";
 import schema from "./src/schema";
-import dotenv from "dotenv";
-import config from "./src/Database/index";
 import { ResolveUrl } from "./src/Services/ResolveUrl";
+
 const mongoUrl = process.env.MONGO_URL;
 const port = process.env.PORT || 3002;
 const baseUrl = process.env.BASE_URL;
-config(mongoUrl);
+connection(mongoUrl);
 
 var app = express();
 

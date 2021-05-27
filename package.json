@@ -2,8 +2,9 @@
   "name": "buycoins",
   "version": "0.0.0",
   "private": true,
+  "main":"app.js",
   "scripts": {
-    "start": "npm run build && node ./build/app.js",
+    "start": "nodemon --exec babel-node ./app.js",
     "start:dev": "nodemon --exec babel-node ./app.js",
     "build": "npm run clean && npm run build-babel",
     "clean": "rm -rf build && mkdir build",
